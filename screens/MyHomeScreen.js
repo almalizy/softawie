@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import { StackNavigator } from 'react-navigation';
 
 import softWare from '../screens/lessonsNav/SoftWare/SoftWare';
-import Electronices from '../screens/lessonsNav/Electronices/Electronices';
+import ElectronicesNav from '../screens/lessonsNav/Electronices/ElectronicesNav';
 import hardware from '../screens/lessonsNav/hardware/hardware';
 import hardware2 from '../screens/lessonsNav/hardware2';
 import Tools from '../screens/lessonsNav/Tools/Tools';
@@ -176,7 +176,7 @@ StackNavigator({
        softWare: {screen :StackNavigator({    
                  softWare:{screen:softWare},
                  Electronices:{screen:StackNavigator({ 
-                               Electronices:{screen:Electronices},
+                               Electronices:{screen:ElectronicesNav},
                                hardware: {screen :StackNavigator({    
                                       hardware:{screen:hardware},
                                       hardware2:{screen:hardware2}   

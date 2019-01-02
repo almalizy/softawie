@@ -6,12 +6,12 @@ import { StackNavigator } from 'react-navigation';
 import { Entypo ,MaterialCommunityIcons,Ionicons} from '@expo/vector-icons';
 import axios from 'axios';
 
-class Electronices1 extends React.Component{
+class Electronices2 extends React.Component{
    //  next line only for navigation title ...
 
    static navigationOptions = ({ navigation }) => { 
     return {
-  title: 'الباب الأول',
+  title: 'الباب الثاني العدد والادوات',
   headerLeft : (<TouchableOpacity 
                   onPress={() => navigation.navigate('Electronices')} 
                   >
@@ -25,6 +25,11 @@ class Electronices1 extends React.Component{
 };
 
   render(){
+
+    const { navigation } = this.props;
+    const itemId = navigation.getParam('itemId', 'NO-ID');
+    const otherParam = navigation.getParam('otherParam', 'some default value');
+    
     return(
       <View >
       <View></View>
@@ -575,9 +580,10 @@ conditional=()=>{
 
 
 
-const Electronicesnav1 = 
+
+const Electronicesnav2 = 
 StackNavigator({
-  Electronices1:{screen:Electronices1},
+  Electronices2:{screen:Electronices2},
   _1E: {screen :StackNavigator({    
                _1E:{screen:_1E},
                _1QE: {screen :StackNavigator({    
@@ -675,5 +681,5 @@ StackNavigator({
                             }
                           }
 
-export default Electronicesnav1;
+export default Electronicesnav2;
 

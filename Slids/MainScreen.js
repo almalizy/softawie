@@ -1,16 +1,16 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Image} from 'react-native';
+import { Image,BackHandler} from 'react-native';
 import Slides from './Slides';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import firstImage from "./assets/1.png";
-const secoundImage = require("./assets/2.png");
-const thirdImage = require("./assets/3.jpg");
+import firstImage from "../assets/1.png";
+const secoundImage = require("../assets/2.png");
+const thirdImage = require("../assets/3.jpg");
 
-const firstLogo = require("./assets/logo-kitchen-sink.png");
-const twoLogo = require("./assets/logo-kitchen-sink.png");
-const threeLogo = require("./assets/logo-kitchen-sink.png");
+const firstLogo = require("../assets/logo-kitchen-sink.png");
+const twoLogo = require("../assets/logo-kitchen-sink.png");
+const threeLogo = require("../assets/logo-kitchen-sink.png");
 
 
 
@@ -27,7 +27,7 @@ class MainScreen extends Component {
     title: 'الرئيسة',
     drawerIcon: ({ tintColor }) => (
         <Image
-          source={require('./screens/image/tools.png')}
+          source={require('../screens/image/tools.png')}
           style={[styles.icon, {tintColor: tintColor}]}
         />
       ),
@@ -40,6 +40,35 @@ class MainScreen extends Component {
     // this.props.navigation.navigate('Home'),Alert.alert('مرحبا بكم في شركة تمكين الشاملة المحدودة');
     this.props.navigation.navigate('myLogin');
   }
+
+   // the next part for canceled retrun back but not working yet ...
+
+   componentWillMount() {
+    setTimeout(() => {
+      BackHandler.addEventListener('hardwareBackPress', this._onBackPress);
+    }, 800);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this._onBackPress);
+  }
+
+  _onBackPress = () => {
+    Alert.alert(
+      'هل ترغب في مغادرة التطبيق ',
+      'هل ترغب في مغادرة التطبيق',
+      // { text: 'للتسجيل ', onPress: () => Linking.openURL('http://tamkeen.sa/adv.html') },
+      [ 
+        { text: ' التقييم', onPress: () => Linking.openURL('https://play.google.com/store/apps/details?id=www.tamkeen.sa.com') },
+        { text: 'نعم', onPress: () => BackHandler.exitApp() },
+        { text: 'لا', onPress: () => Alert.alert('استمتع بتصفح تطبيق سوفتاوي'), style: 'cancel' },
+       ],
+      { cancelable: false }
+
+    );
+    return true;
+    }
+// finished here ........
 
   render() {
     return (

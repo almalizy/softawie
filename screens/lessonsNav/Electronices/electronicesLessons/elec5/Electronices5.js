@@ -1,9 +1,11 @@
 import React from 'react';
-import {WebView, View,KeyboardAvoidingView,Text,Button,TouchableOpacity,TextInput,Alert,ScrollView,Image,Dimensions} from 'react-native';
+import {WebView, View,KeyboardAvoidingView,Button,TouchableOpacity,TextInput,Alert,ScrollView,Image,Dimensions} from 'react-native';
+import { Container, Content, ListItem, CheckBox, Text, Body } from 'native-base';
+
 import { StackNavigator } from 'react-navigation';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo ,} from '@expo/vector-icons';
 import axios from 'axios';
-import Itunes from './itunes'
+import Itunes from '../itunes'
 import ImageZoom from 'react-native-image-pan-zoom';
 
 class Electronices5 extends React.Component{
@@ -16,6 +18,8 @@ class Electronices5 extends React.Component{
   };
 
   render(){
+
+    
     return(
       <View style={{flexDirection: 'row',justifyContent:'center' }} > 
 
@@ -59,7 +63,9 @@ class Electronices5 extends React.Component{
 class _1S extends React.Component {
  
 
-  state = {details:[]};
+  state = {
+    details:[]
+  };
 
   componentWillMount() {
     axios.get('https://software-api.herokuapp.com/')
@@ -115,62 +121,128 @@ class _1S extends React.Component {
 // السؤال الاول.......
 
 class _1QS extends React.Component {
+  
   static navigationOptions = {
     title: 'سؤال 1',
     headerBackTitle:null,
     headerTintColor: 'red'
   };
 
-  constructor(props) {
-    super(props);
-    this.state = { text1: '',text2: '' };
-  }
+ 
+    constructor(props) {
+      super(props);
+      this.state = {
+        checkbox1: false,
+        checkbox2: false,
+        checkbox3: false,
+        checkbox4: false,
+        counter : []
+      };
+    }
+    toggleSwitch1() {
+      this.setState({
+        checkbox1: !this.state.checkbox1 ,
+        counter :   [...this.state.counter,'1']
+      });
+    }
+    toggleSwitch2() {
+      this.setState({
+        checkbox2: !this.state.checkbox2,
+        counter :   [...this.state.counter,'1']
+  
+      });
+    }
+    toggleSwitch3() {
+      this.setState({
+        checkbox3: !this.state.checkbox3,
+        counter :   [...this.state.counter,'1']
+  
+      });
+    }
+    toggleSwitch4() {
+      this.setState({
+        checkbox4: !this.state.checkbox4,
+        counter :   [...this.state.counter,'1']
+  
+      });
+    }
+  
+    
+    render() {
+      const { navigation } = this.props;
+      const itemId = navigation.getParam('itemId', 'NO-ID');
+      const otherParam = navigation.getParam('otherParam', 'some default value');
 
-conditional=()=>{
-     this.state.text1 == 'مجانية' && this.state.text2 == 'مدفوعة'
-     ? this.props.navigation.navigate('_2S')
-     : Alert.alert("هناك خطأ\n ارجع الي الدرس السابق ثم أعد المحاولة من فضلك")
-}
-  render() {
-    return (
-     <KeyboardAvoidingView>
-        <Text style={{ fontSize: 18 ,alignSelf:'flex-end',marginTop:4}} >
-            ما هي أنواع البرامج المستخدمة في عمل السوفت وير
-        </Text>
-        <Text style={{ fontSize: 18 ,alignSelf:'flex-end'}} >
-            للمحمول او الجوال ؟ 
-        </Text>
-          <TextInput
-                  style={{height: 40,width:60,fontSize: 22 
-                  ,alignSelf:'flex-end',marginRight:10}}
-                  placeholder='_____'
-                  onChangeText={(text1) => this.setState({text1})}
-                  value={this.state.text1}
-                  autoCorrect={false}
-                  maxLength={6}    
-            /> 
-       <View > 
-          <TextInput
-                  style={{height: 40,width:60,
-                  fontSize: 22 ,alignSelf:'flex-end',marginRight:10}}
-                  placeholder='_____'
-                  onChangeText={(text2) => this.setState({text2})}
-                  value={this.state.text2}
-                  autoCorrect={false}
-                  maxLength={6}    
-            /> 
-     </View>
-                <Button 
-              title='check' 
-              style={styles.buttons}
-              onPress = {this.conditional}
+      conditional = () => {
+        this.state.counter.length > 3  
+        ?  Alert.alert(
+          'Alert Title',
+          'My Alert Msg',
+          [
+            {text: JSON.stringify(itemId), onPress: () => console.log('Ask me later pressed')},
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: 'OK', onPress: () => console.log('OK Pressed')},
+          ],
+          { cancelable: false }
+        )
+        :  Alert.alert("هناك خطأ\n ارجع الي الدرس السابق ثم أعد المحاولة من فضلك")
+      }
+      return (
+        <Container >
+          <Content>
+            <ListItem button onPress={() => this.toggleSwitch1()}>
+              <CheckBox
+                checked={this.state.checkbox1}
+                onPress={() => this.toggleSwitch1()}
               />
-      </KeyboardAvoidingView>
-
-      
-    );
+              <Body>
+                <Text>Lunch Break</Text>
+              </Body>
+            </ListItem>
+            <ListItem button onPress={() => this.toggleSwitch2()}>
+              <CheckBox
+                color="red"
+                checked={this.state.checkbox2}
+                onPress={() => this.toggleSwitch2()}
+              />
+              <Body>
+                <Text>Daily Stand Up</Text>
+              </Body>
+            </ListItem>
+            <ListItem button onPress={() => this.toggleSwitch3()}>
+              <CheckBox
+                color="green"
+                checked={this.state.checkbox3}
+                onPress={() => this.toggleSwitch3()}
+              />
+              <Body>
+                <Text>Finish list Screen</Text>
+              </Body>
+            </ListItem>
+            <ListItem button onPress={() => this.toggleSwitch4()}>
+              <CheckBox
+                color="#000"
+                checked={this.state.checkbox4}
+                onPress={() => this.toggleSwitch4()}
+              />
+              <Body>
+                <Text>Discussion with Client</Text>
+              </Body>
+            </ListItem>
+  
+              <Button 
+                   title = ' test'
+                   style= {styles.buttonCOntainer}
+                   onPress = {conditional}
+                   />
+          </Content>
+               
+        </Container>
+      );
+    }
   }
-}
+  
+  
 
 
 

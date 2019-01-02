@@ -4,9 +4,7 @@ import ImageZoom from 'react-native-image-pan-zoom';
 
 class Itunes extends React.Component{
     render(){
-//       const itunesImage = [
-//             require('./softImage/2.jpg'),
-// ] 
+
 
         return(
             <View>

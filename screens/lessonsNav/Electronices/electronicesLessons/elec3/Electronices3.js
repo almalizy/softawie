@@ -3,7 +3,7 @@ import {WebView, View,KeyboardAvoidingView,Text,Button,TouchableOpacity,TextInpu
 import { StackNavigator } from 'react-navigation';
 import { Entypo ,MaterialCommunityIcons} from '@expo/vector-icons';
 import axios from 'axios';
-import Itunes from './itunes'
+import Itunes from '../itunes'
 import ImageZoom from 'react-native-image-pan-zoom';
 import { Container, Header, Content, ListItem, CheckBox, Body } from 'native-base';
 
