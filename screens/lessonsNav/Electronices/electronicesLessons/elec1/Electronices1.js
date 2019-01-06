@@ -1,12 +1,10 @@
 import React from 'react';
 import { View,Button,TouchableOpacity,Alert, Text} from 'react-native';
-import styles from '../styles' ;
-
-import {E11,E11Q,E12,E12Q,E13,E13Q} from './AllElec1';
-
 import { StackNavigator } from 'react-navigation';
-import { Entypo ,Ionicons} from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
+import styles from '../styles' ;
+import {E11,E11Q,E12,E12Q,E13,E13Q} from './AllElec1';
 
 export default class RootStack extends React.Component{
   static navigationOptions = ({ navigation }) => { 

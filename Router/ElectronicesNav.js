@@ -4,12 +4,12 @@ import { TouchableOpacity,Text,Alert } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { StackNavigator } from 'react-navigation';
 
-import ElectronicesScreen from './ElectronicesScreen';
-import Electronices1Screen from './electronicesLessons/elec1/Electronices1';
-import Electronices2Screen from './electronicesLessons/elec2/Electronices2';
-import Electronices3Screen from './electronicesLessons/elec3/Electronices3';
-import Electronices4Screen from './electronicesLessons/elec4/Electronices4';
-import Electronices5Screen from './electronicesLessons/elec5/Electronices5';
+import ElectronicesScreen from '../screens/lessonsNav/Electronices/ElectronicesScreen';
+import Electronices1Screen from '../screens/lessonsNav/Electronices/electronicesLessons/elec1/Electronices1';
+import Electronices2Screen from '../screens/lessonsNav/Electronices/electronicesLessons/elec2/Electronices2';
+import Electronices3Screen from '../screens/lessonsNav/Electronices/electronicesLessons/elec3/Electronices3';
+import Electronices4Screen from '../screens/lessonsNav/Electronices/electronicesLessons/elec4/Electronices4';
+import Electronices5Screen from '../screens/lessonsNav/Electronices/electronicesLessons/elec5/Electronices5';
 
 export default class RootStack extends React.Component{
   static navigationOptions = ({ navigation }) => { 

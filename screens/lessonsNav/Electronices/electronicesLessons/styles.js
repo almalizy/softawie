@@ -1,5 +1,5 @@
 
- const styles = {
+ export default styles  = {
     icon:{
       width: 24,
       height: 24,
@@ -49,8 +49,11 @@
     fontWeight: 'bold',
     justifyContent:'center' ,
     alignItems: 'center',
-
+  },
+  textStyles:{ 
+    fontSize: 18 ,
+    alignSelf:'flex-end',
+    textAlign: "right"
   }
 }
 
-export default styles ;

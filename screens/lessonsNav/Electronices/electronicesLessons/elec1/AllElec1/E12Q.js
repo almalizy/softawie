@@ -26,7 +26,7 @@ class E12Q extends React.Component {
   
   conditional=()=>{
        this.state.choice1 == true && this.state.choice2 == true && this.state.choice3 == true
-       ? this.props.navigation.navigate('_3E')  && this.setState({counter:counter+1})
+       ? this.props.navigation.navigate('E13')  && this.setState({counter:counter+1})
        : Alert.alert("هناك خطأ\n ارجع الي الدرس السابق ثم أعد المحاولة من فضلك")
   }
     render() {

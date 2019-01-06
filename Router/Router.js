@@ -1,14 +1,14 @@
-import MyHomeScreen from './screens/MyHomeScreen';
-import MyLoginScreen from './screens/MyLoginScreen';
+import MyHomeScreen from '../screens/MyHomeScreen';
+import MyLoginScreen from '../screens/MyLoginScreen';
 
-import contactUs from './screens/contactUs';
-import aboutDevoloper from './screens/aboutDevoloper';
+import contactUs from '../screens/contactUs';
+import aboutDevoloper from '../screens/aboutDevoloper';
 
-import ElectronicesScreen from './screens/lessonsNav/Electronices/ElectronicesScreen';
-import softWareScreen from './screens/lessonsNav/SoftWare/SoftWare';
-import Tools from './screens/lessonsNav/Tools/Tools';
+import ElectronicesScreen from '../screens/lessonsNav/Electronices/ElectronicesScreen';
+import softWareScreen from '../screens/lessonsNav/SoftWare/SoftWare';
+import Tools from '../screens/lessonsNav/Tools/Tools';
 
-import MainScreen from './Slids/MainScreen';
+import MainScreen from '../Slids/MainScreen';
 import { DrawerNavigator } from 'react-navigation';
 
 const MainNavigator = DrawerNavigator({

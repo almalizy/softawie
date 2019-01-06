@@ -28,7 +28,8 @@ class E11Q extends React.Component {
   
   conditional=()=>{
        this.state.choice1 == true && this.state.choice2 == false && this.state.choice3 == false
-       ? this.props.navigation.navigate('E12') && elec1Array.push(1,2) && Alert.alet(elec1Array)
+       ? this.props.navigation.navigate('E12') 
+      //  && elec1Array.push(1,2) && Alert.alet(elec1Array)
        : Alert.alert("هناك خطأ\n ارجع الي الدرس السابق ثم أعد المحاولة من فضلك")
   }
   

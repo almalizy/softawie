@@ -54,7 +54,7 @@ import styles from '../../styles' ;
             <Button 
                 title='الاستمرار' 
                 style={styles.buttons}
-                onPress = {() => this.props.navigation.navigate('_3QE')}
+                onPress = {() => this.props.navigation.navigate('E13Q')}
                 />
         </View>
       );

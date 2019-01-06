@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { View,Button,TouchableOpacity,Alert} from 'react-native';
-import { Container, Content, ListItem, CheckBox, Text, Body } from 'native-base';
+import { View,Button,TouchableOpacity,Text,Alert} from 'react-native';
 import styles from '../../styles' ;
 
 
@@ -89,7 +88,7 @@ import { Entypo ,Ionicons} from '@expo/vector-icons';
             <Button 
                 title='الاستمرار' 
                 style={styles.buttons}
-                onPress = {() => this.props.navigation.navigate('_1QE')}
+                onPress = {() => this.props.navigation.navigate('E11Q')}
                 />     
       </View>
   

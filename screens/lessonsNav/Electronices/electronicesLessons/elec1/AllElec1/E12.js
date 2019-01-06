@@ -60,7 +60,7 @@ class E12 extends React.Component {
             <Button 
                 title='الاستمرار' 
                 style={styles.buttons}
-                onPress = {() => this.props.navigation.navigate('_2QE')}
+                onPress = {() => this.props.navigation.navigate('E12Q')}
                 />
                 
       </View>
